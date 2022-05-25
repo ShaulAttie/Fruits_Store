@@ -5,6 +5,7 @@ import NewSearchBar from "./Components/NewSearchBar"
 import RangeBar from "./Components/RangeBar"
 import Sum from "./Components/Sum"
 import './App.css';
+import CunrrencyButton from './Components/CurrencyButton';
 
 let list = [
   { product: 'Grapes', country: "Israel", vitamin: 'B, K', id: 'lg01', url: 'https://img.rami-levy.co.il/product/147/6344/medium.jpg', price: 9.90 },
@@ -26,9 +27,12 @@ vitamins = list.map(item => item.vitamin).reduce((a, b) => a + b + ',', '').spli
 vitamins = [...new Set(vitamins)].sort()
 vitamins.shift()
 
+const currency = ['ILS', 'USD', 'BZL']
+
 var objCheck = []
 let min = []
 var sum = 0
+// var currencyCheck = 'USD'
 
 //////////////////////////////////////////////////////////////
 // list.map(v => min.push(parseFloat(v.price)))
@@ -109,13 +113,30 @@ function App() {
   mlayState.map(v => sum += v.price)
   sum = sum.toFixed(2)
 
+  ///////////////////////////////////////
+  const [theCurrency, setTheCurrency] = useState('USD')
+
+  const currencyHandler = (e) => {
+    console.log(e.target.value);
+    setTheCurrency(e.target.value)
+
+  }
 
   return (
     <>
       <h1 id='storeName'>My Store</h1>
-
-      <Sum sum={sum} />
-
+      <div id='sum_currency'>
+        <div id="sum">
+          <Sum sum={sum} />
+        </div>
+        <div id="currency">
+          {currency.map(elem => {
+            return (
+              <CunrrencyButton currency={elem} onClick={currencyHandler} key={elem} />
+            )
+          })}
+        </div>
+      </div>
       {/* ///////////////////////////////////////////SEARCH BAR */}
       <div className='header'>
         <div>
@@ -174,7 +195,13 @@ function App() {
               <CardHeader>
                 <img src={elem.url} alt={elem.product} />
               </CardHeader>
-              <CardContent><h4><b>{elem.product}<br /> $ {elem.price}</b></h4> </CardContent>
+              {theCurrency == 'ILS' ?
+                <CardContent><h4><b>{elem.product}<br /> ILS {(elem.price * 3.5).toFixed(2)}  </b></h4> </CardContent> :
+                theCurrency == 'USD' ?
+                  <CardContent><h4><b>{elem.product}<br /> $ {elem.price}</b></h4> </CardContent> :
+                  theCurrency == 'BZL' ?
+                    <CardContent><h4><b>{elem.product}<br /> BZL {(elem.price * 5.6).toFixed(2)}</b></h4> </CardContent> : null
+              }
               <CardFooter>
                 <button className="removeButton" id={elem.id} onClick={(e) => deleteButton(e.target.id)}>Remove</button>
               </CardFooter>

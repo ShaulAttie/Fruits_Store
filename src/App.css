@@ -11,15 +11,15 @@ h1 {
 }
 
 /* .items { */
-  /* display: flex; */
-  /* flex-wrap: nowrap; */
-  /* flex-direction: column; */
-  /* background-color: #ffe282; */
-  /* min-height: 100vh; */
-  /* align-items: center; */
-  /* justify-content: center; */
-  /* font-size: calc(10px + 2vmin); */
-  /* color: white; */
+/* display: flex; */
+/* flex-wrap: nowrap; */
+/* flex-direction: column; */
+/* background-color: #ffe282; */
+/* min-height: 100vh; */
+/* align-items: center; */
+/* justify-content: center; */
+/* font-size: calc(10px + 2vmin); */
+/* color: white; */
 /* } */
 
 #storeName {
@@ -27,7 +27,7 @@ h1 {
   justify-content: center;
 }
 
-.header{
+.header {
   display: flex;
   flex-wrap: nowrap;
   justify-content: space-evenly;
@@ -35,11 +35,12 @@ h1 {
   height: 10rem;
 }
 
-.inputSearch{
+.inputSearch {
   height: 1.5rem;
 
 }
-.clearButton{
+
+.clearButton {
   height: 2rem;
   width: 5rem;
 }
@@ -68,4 +69,21 @@ h1 {
   to {
     transform: rotate(360deg);
   }
+}
+
+#sum_currency {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  /* border: 2px solid rgb(0, 38, 255); */
+
+}
+
+
+#currency {
+  display: flex;
+  justify-content: space-between;
+ width: 130px;
+ /* border: 2px solid rgb(0, 38, 255); */
+
 }
