@@ -1,0 +1,71 @@
+body {
+  -moz-user-select: none;
+  -khtml-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+h1 {
+  text-align: center;
+}
+
+/* .items { */
+  /* display: flex; */
+  /* flex-wrap: nowrap; */
+  /* flex-direction: column; */
+  /* background-color: #ffe282; */
+  /* min-height: 100vh; */
+  /* align-items: center; */
+  /* justify-content: center; */
+  /* font-size: calc(10px + 2vmin); */
+  /* color: white; */
+/* } */
+
+#storeName {
+  display: flex;
+  justify-content: center;
+}
+
+.header{
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-evenly;
+  background-color: beige;
+  height: 10rem;
+}
+
+.inputSearch{
+  height: 1.5rem;
+
+}
+.clearButton{
+  height: 2rem;
+  width: 5rem;
+}
+
+
+/* .App-logo {
+  height: 40vmin;
+  pointer-events: none;
+} */
+/* 
+.App-link {
+  color: #61dafb;
+} */
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
